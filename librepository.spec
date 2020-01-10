@@ -1,6 +1,6 @@
 Name: librepository
 Version: 1.1.3
-Release: 7%{?dist}
+Release: 9%{?dist}
 Summary: Hierarchical repository abstraction layer
 License: LGPLv2
 Group: System Environment/Libraries
@@ -9,7 +9,7 @@ Group: System Environment/Libraries
 #to simplify the licensing
 Source: %{name}-%{version}-jarsdeleted.zip
 URL: http://reporting.pentaho.org/
-BuildRequires: ant, ant-contrib, ant-nodeps, java-devel, jpackage-utils, libbase >= 1.1.3
+BuildRequires: ant, ant-contrib, java-devel, jpackage-utils, libbase >= 1.1.3
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires: java, jpackage-utils, libbase >= 1.1.3
 BuildArch: noarch
@@ -70,6 +70,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_javadocdir}/%{name}
 
 %changelog
+* Wed Jan 08 2014 Caolán McNamara <caolanm@redhat.com> - 1.1.3-9
+- Resolves: rhbz#1048875 fix FTBFS
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.1.3-8
+- Mass rebuild 2013-12-27
+
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.3-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
